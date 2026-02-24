@@ -1,11 +1,198 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="estilo.css">
+    <title>Weather Now</title>
 </head>
 <body>
+
+<header>
+    <section id="logo">
+        <img src="https://media.tenor.com/Ew0xi9NXPIwAAAAM/shampain-dominipino.gif"/>
+        <h3>Weather Now</h3>
+    </section>
     
+    <select>
+        <option selected disabled>Units</option>
+    </select>
+</header>
+
+<main>
+
+    <nav>
+        <h1>How's the sky looking today?</h1>
+        <input type="text" placeholder="Search for a place...">
+        <button>Search</button>
+    </nav>
+
+    <div id="conteudo">
+
+        <div class="esquerda">
+
+            <section class="current-weather">
+                <section>
+                    <h2>Berlin, Germany</h2>
+                    <p>Tuesday, Aug 5, 2025</p>
+                </section>
+                <section id="temperatura">
+                    <p>20°</p>
+                </section>
+                
+            </section>
+
+            <section class="stats">
+                <ul>
+                    <li>
+                        <p>Feels Like</p>
+                        <p><strong>18°</strong></p>
+                    </li>
+
+                     <li>
+                        <p>Humidity</p>
+                        <p><strong>46%</strong></p>
+                    </li>
+
+                    <li>
+                        <p>Wind</p>
+                        <p><strong>14 km/h</strong></p>
+                    </li>
+
+                    <li>
+                        <p>Precipitation</p>
+                        <p><strong>0 mm</strong></p>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="daily">
+                <h3>Daily forecast</h3>
+                <ul>
+                    <li>
+                        <p>Tue</p>
+                        <p class="tempIcon">☁️</p>
+                        <section class="tempStatus">
+                            <p>20°</p>
+                            <p>14°</p>
+                        </section>
+                        
+                    </li>
+                    <li>
+                        <p>Wed</p>
+                        <p class="tempIcon">☁️</p>
+                        <section class="tempStatus">
+                            <p>21°</p>
+                            <p>15°</p>
+                        </section>
+                    </li>
+                    <li>
+                        <p>Thu</p>
+                        <p class="tempIcon">☁️</p>
+                        <section class="tempStatus">
+                            <p>24°</p>
+                            <p>14°</p>
+                        </section>
+                    </li>
+                    <li>
+                        <p>Fri</p>
+                        <p class="tempIcon">☁️</p>
+                        <section class="tempStatus">
+                            <p>25°</p>
+                            <p>13°</p>
+                        </section>
+                    </li>
+                    <li>
+                        <p>Sat</p>
+                        <p class="tempIcon">☁️</p>
+                        <section class="tempStatus">
+                            <p>21°</p>
+                            <p>15°</p>
+                        </section>
+                    </li>
+                    <li>
+                        <p>Sun</p>
+                        <p class="tempIcon">☁️</p>
+                        <section class="tempStatus">
+                            <p>25°</p>
+                            <p>16°</p>
+                        </section>
+                    </li>
+                    <li>
+                        <p>Mon</p>
+                        <p class="tempIcon">☁️</p>
+                        <section class="tempStatus">
+                            <p>24°</p>
+                            <p>15°</p>
+                        </section>
+                    </li>
+                </ul>
+            </section>
+
+        </div>
+
+        <section id="direita">
+            <section class="hourly">
+                <h3>Hourly forecast</h3>
+                <select>
+                    <option selected disabled>Tuesday</option>
+                </select>
+            </section>
+            <ul>
+                <li>
+                    <section class="linhaHoras">
+                        <p>☁️ 3 PM</p>
+                        <p>20°</p>
+                    </section>
+                </li>
+                <li>
+                    <section class="linhaHoras">
+                        <p>☁️ 4 PM</p>
+                        <p>20°</p>
+                    </section>
+                </li>
+                <li>
+                    <section class="linhaHoras">
+                        <p>☁️ 5 PM</p>
+                        <p>20°</p>
+                    </section>
+                </li>
+                <li>
+                    <section class="linhaHoras">
+                        <p>☁️ 6 PM</p>
+                        <p>19°</p>
+                    </section>
+                </li>
+                <li>
+                    <section class="linhaHoras">
+                        <p>☁️ 7 PM</p>
+                        <p>18°</p>
+                    </section>
+                </li>
+                <li>
+                    <section class="linhaHoras">
+                        <p>☁️ 8 PM</p>
+                        <p>18°</p>
+                    </section>
+                </li>
+                <li>
+                    <section class="linhaHoras">
+                        <p>☁️ 9 PM</p>
+                        <p>17°</p>
+                    </section>
+                </li>
+                <li>
+                    <section class="linhaHoras">
+                        <p>☁️ 10 PM</p>
+                        <p>17°</p>
+                    </section>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+</main>
+
 </body>
 </html>
