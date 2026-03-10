@@ -18,7 +18,7 @@ function renderDaily(dailyData){
 }
 
 function renderHourly(hourlyData){
-
+    
 }
 
 function orquestradora(data){
@@ -28,4 +28,6 @@ function orquestradora(data){
     renderHourly(data.hourly);
 }
 
-orquestradora(previsao);
+document.addEventListener("DOMContentLoaded", () => {
+    orquestradora(previsao);
+});
