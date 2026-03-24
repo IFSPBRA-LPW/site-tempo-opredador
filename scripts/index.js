@@ -1,7 +1,4 @@
-import { cityWeather   } from "./data.js";
-
-console.log(cityWeather);
-
+import { fetchWeather } from "./data.js";
 
 function renderBannerInfo(data) {
   const city = document.querySelector("#climaAtualInfo h2");
@@ -84,6 +81,11 @@ function orquestradora(data){
     renderHourly(data.hourly);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    orquestradora(cityWeather);
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    const data = await fetchWeather("São Paulo");
+    orquestradora(data);
+  } catch (error) {
+    console.error("Erro ao buscar dados:", error);
+  }
 });
