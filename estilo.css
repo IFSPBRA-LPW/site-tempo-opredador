@@ -1,3 +1,41 @@
+:root {
+  --cor-background: #070B34;
+  --cor-text: white;
+
+  --cor-header-select: #1c2248;
+
+  --cor-button-bg: #5C6CFF;
+  --cor-button-bg-hover: #4B5AF0;
+
+  --cor-gradient-inicio: #4b6cff;
+  --cor-gradient-fim: #6f8bff;
+
+  --cor-item-bg: #1C1F4A;
+
+  --cor-hourly-bg: #15183C;
+  --cor-hourly-item-bg: #0f1538;
+  --cor-hourly-select: #0f1538;
+}
+
+body.temaClaro {
+  --cor-background: #f0f4ff;
+  --cor-text: #222;
+
+  --cor-header-select: #7f9fff;
+
+  --cor-button-bg: #4b6cff;
+  --cor-button-bg-hover: #3a57cc;
+
+  --cor-gradient-inicio: #a3bfff;
+  --cor-gradient-fim: #7f9fff;
+
+  --cor-item-bg: #d6dfee;
+
+  --cor-hourly-bg: #c4d0f5;
+  --cor-hourly-item-bg: #abb9e8;
+  --cor-hourly-select: #abb9e8;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,8 +43,8 @@
 }
 
 body {
-    background: #070B34;
-    color: white;
+    background: var(--cor-background);
+    color: var(--cor-text);
     padding: 2rem;
     font-family: Inter, sans-serif;
 }
@@ -41,7 +79,7 @@ header img {
 }
 
 header select {
-    background: #1c2248;
+    background: var(--cor-header-select);
     color: white;
     border: none;
     padding: 0.6rem 1rem;
@@ -67,24 +105,23 @@ nav input {
     max-width: 100%;
     border-radius: 0.5rem;
     border: none;
-    background: #1c2248;
-    color: white;
+    background: var(--cor-header-select);
+    color: var(--cor-text);
     margin-right: 0.5rem;
 }
 
-nav button {
+.button {
     padding: 0.7rem 1.2rem;
     border-radius: 0.5rem;
     border: none;
-    background: #5C6CFF
-;
-    color: white;
+    background: var(--cor-button-bg);
+    color: var(--cor-text);
     cursor: pointer;
     transition: 0.2s;
 }
 
-nav button:hover {
-    background: #4B5AF0;
+.button:hover {
+    background: var(--cor-button-bg-hover);
 }
 
 /* GRID */
@@ -112,7 +149,7 @@ nav button:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(135deg, #4b6cff, #6f8bff);
+  background: linear-gradient(135deg, var(--cor-gradient-inicio), var(--cor-gradient-fim));
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
@@ -132,7 +169,7 @@ nav button:hover {
 }
 
 .stats li {
-    background: #1C1F4A;
+    background: var(--cor-item-bg);
     padding: 1rem;
     border-radius: 0.7rem;
 }
@@ -157,7 +194,7 @@ nav button:hover {
 }
 
 .daily li {
-    background: #1C1F4A;
+    background: var(--cor-item-bg);
     padding: 0.8rem;
     border-radius: 0.625rem;
     text-align: center;
@@ -167,8 +204,15 @@ nav button:hover {
 }
 
 .tempStatus {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tempStatus p {
+  margin: 0;
+  text-align: center;
 }
 
 .tempIcon {
@@ -178,7 +222,7 @@ nav button:hover {
 /* HOURLY DIREITA */
 
 .hourly {
-    background: #15183C;
+    background: var(--cor-hourly-bg);
     padding: 1.5rem;
     border-radius: 1rem;
 }
@@ -190,8 +234,8 @@ nav button:hover {
 }
 
 #navHourly select {
-    background: #0f1538;
-    color: white;
+    background: var(--cor-hourly-select);
+    color: var(--cor-text);
     border: none;
     padding: 0.6rem 1rem;
     border-radius: 0.5rem;
@@ -211,7 +255,7 @@ nav button:hover {
 }
 
 .hourly li {
-    background: #0f1538;
+    background: var(--cor-hourly-item-bg);
     padding: 0.8rem 1rem;
     border-radius: 0.625rem;
     text-align: center;

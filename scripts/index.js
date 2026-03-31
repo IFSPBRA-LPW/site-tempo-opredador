@@ -44,7 +44,7 @@ function renderDaily(dailyData){
 
     li.innerHTML = `
       <p>${day.day}</p>
-      <p class="tempIcon">${day.icon}</p>
+      <img class="tempIcon" src="${day.icon}">
       <section class="tempStatus">
         <p>${day.max}°</p>
         <p>${day.min}°</p>
@@ -65,7 +65,10 @@ function renderHourly(hourlyData){
 
     li.innerHTML = `
       <section class="linhaHoras">
-        <p>☁️ ${hour.time}</p>
+        <p>
+          <img class="hourIcon" src="${hour.icon}" style="width:24px; height:24px;">
+          ${hour.time}
+        </p>
         <p>${hour.temp}°</p>
       </section>
     `;
@@ -90,8 +93,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
-const searchInput = document.getElementById("searchInput");
-const searchButton = document.getElementById("searchButton");
+const searchInput = document.querySelector("#searchInput"); 
+const searchButton = document.querySelector("nav .button"); 
 
 async function buscarCidade() {
   const city = searchInput.value;

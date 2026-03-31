@@ -15,6 +15,7 @@ return weatherData(data);
 
 
 function weatherData(data) {
+    const currentHour = new Date(data.location.localtime).getHours();
     return{
         city: data.location.name,
         country: data.location.country,
@@ -25,20 +26,19 @@ function weatherData(data) {
         humidity: data.current.humidity,
         wind: data.current.wind_kph,
         precipitation: data.current.precip_mm,
-        daily: [
-            { day: "Tue", icon: "🌧", max: 20, min: 14 },
-            { day: "Wed", icon: "🌧", max: 21, min: 15 },
-            { day: "Thu", icon: "☀", max: 24, min: 14 },
-            { day: "Fri", icon: "⛈", max: 25, min: 13 },
-            { day: "Sat", icon: "⛈", max: 21, min: 15 },
-            { day: "Sun", icon: "☁", max: 25, min: 16 },
-            { day: "Mon", icon: "🌫", max: 24, min: 15 },
-        ],
-        hourly: data.forecast.forecastday[0].hour.map(hour => ({
-            time: new Date(hour.time).getHours() + ":00",
-            temp: hour.temp_c
+        daily: data.forecast.forecastday.map(day => ({
+            day: new Date(day.date).toLocaleDateString("pt-BR", { weekday: "short" }),
+            icon: `https:${day.day.condition.icon}`,
+            max: day.day.maxtemp_c,
+            min: day.day.mintemp_c
+        })),
+
+        hourly: data.forecast.forecastday[0].hour.slice(currentHour, currentHour + 8).map(hour => ({
+            icon: `https:${hour.condition.icon}`,
+            time: hour.time.split(" ")[1],
+            temp: Math.round(hour.temp_c),
         }))
-    }
-    
-};
+    };
+}
+
 

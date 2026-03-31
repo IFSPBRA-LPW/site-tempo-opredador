@@ -13,10 +13,14 @@
         <img src="https://media.tenor.com/Ew0xi9NXPIwAAAAM/shampain-dominipino.gif"/>
         <h3>Weather Now</h3>
     </section>
+    <section>
+        <button id="mudarTema" class="button">Tema</button>
+        <select>
+            <option selected disabled>Units</option>
+        </select>
+        
+    </section>
     
-    <select>
-        <option selected disabled>Units</option>
-    </select>
 </header>
 
 <main>
@@ -24,7 +28,7 @@
     <nav>
         <h1>How's the sky looking today?</h1>
         <input type="text" id="searchInput" placeholder="Search for a place...">
-        <button id="searchButton">Search</button>
+        <button class="button">Search</button>
     </nav>
 
     <div id="conteudo">
@@ -198,4 +202,5 @@
 <script type="module" src="./scripts/index.js" defer></script>
 
 </body>
+<script src="./scripts/mudarTema.js"></script>
 </html>
