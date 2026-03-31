@@ -110,3 +110,8 @@ async function buscarCidade() {
 }
 
 searchButton.addEventListener("click", buscarCidade);
+searchInput.addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    buscarCidade();
+  }
+});
