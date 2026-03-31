@@ -34,16 +34,10 @@ function weatherData(data) {
             { day: "Sun", icon: "☁", max: 25, min: 16 },
             { day: "Mon", icon: "🌫", max: 24, min: 15 },
         ],
-        hourly: [
-            { time: "3 PM", temp: 20 },
-            { time: "4 PM", temp: 20 },
-            { time: "5 PM", temp: 20 },
-            { time: "6 PM", temp: 19 },
-            { time: "7 PM", temp: 18 },
-            { time: "8 PM", temp: 18 },
-            { time: "9 PM", temp: 17 },
-            { time: "10 PM", temp: 17 },
-        ],
+        hourly: data.forecast.forecastday[0].hour.map(hour => ({
+            time: new Date(hour.time).getHours() + ":00",
+            temp: hour.temp_c
+        }))
     }
     
 };

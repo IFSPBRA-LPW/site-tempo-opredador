@@ -83,9 +83,27 @@ function orquestradora(data){
 
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    const data = await fetchWeather("São Paulo");
+    const data = await fetchWeather("Braganca Paulista");
     orquestradora(data);
   } catch (error) {
     console.error("Erro ao buscar dados:", error);
   }
 });
+
+const searchInput = document.getElementById("searchInput");
+const searchButton = document.getElementById("searchButton");
+
+async function buscarCidade() {
+  const city = searchInput.value;
+
+  if (!city) return;
+
+  try {
+    const data = await fetchWeather(city);
+    orquestradora(data);
+  } catch (error) {
+    console.error("Erro:", error);
+  }
+}
+
+searchButton.addEventListener("click", buscarCidade);
